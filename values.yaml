@@ -142,6 +142,7 @@ autoscaling:
   # targetMemoryUtilizationPercentage: 80
 
 # Additional volumes on the output Deployment definition.
+replicaCount: 3
 volumes: []
 # - name: foo
 #   secret:
