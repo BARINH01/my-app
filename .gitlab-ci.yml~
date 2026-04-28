@@ -22,10 +22,6 @@ maven-test:
   script:
     - cd my-java-app
     - mvn test
-  artifacts:
-    when: always
-    reports:
-      junit: my-java-app/target/surefire-reports/TEST-*.xml
   tags:
     - my-runner
 
@@ -34,9 +30,6 @@ maven-package:
   script:
     - cd my-java-app
     - mvn package
-  artifacts:
-    paths:
-      - my-java-app/target/*.jar
   tags:
     - my-runner
 
