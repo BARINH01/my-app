@@ -1,6 +1,5 @@
 stages:
   - build
-  - test
   - lint
   - template
   - deploy
@@ -9,6 +8,7 @@ variables:
   RELEASE_NAME: my-release
   CHART_PATH: .
 
+# Maven build
 maven-build:
   stage: build
   script:
@@ -17,6 +17,7 @@ maven-build:
   tags:
     - my-runner
 
+# Maven test
 maven-test:
   stage: test
   script:
@@ -25,6 +26,7 @@ maven-test:
   tags:
     - my-runner
 
+# Maven package
 maven-package:
   stage: test
   script:
@@ -33,6 +35,7 @@ maven-package:
   tags:
     - my-runner
 
+# Helm lint
 helm-lint:
   stage: lint
   script:
@@ -40,13 +43,7 @@ helm-lint:
   tags:
     - my-runner
 
-helm-template:
-  stage: template
-  script:
-    - helm template $RELEASE_NAME $CHART_PATH
-  tags:
-    - my-runner
-
+# Helm deploy
 helm-deploy:
   stage: deploy
   script:
