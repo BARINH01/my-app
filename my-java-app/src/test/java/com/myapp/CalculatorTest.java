@@ -47,7 +47,7 @@ public class CalculatorTest {
 	
 	@Test
 	public void testDivideNegative() {
-		assertEquals(5, calc.divide(-15, -3));
+		assertEquals(5.0, calc.divide(-15, -3), 0.001);
 	}
 }
 
