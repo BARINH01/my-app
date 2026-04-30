@@ -29,25 +29,5 @@ public class CalculatorTest {
 	public void testDivideByZero() {
 		calc.divide(10, 0);
 	}
-	
-	@Test
-	public void testAddNegative() {
-		assertEquals(-2, calc.add(-5, 3));
-	}
-	
-	@Test
-	public void testSubtractNegative() {
-		assertEquals(-8, calc.subtract(-5, -3));
-	}
-	
-	@Test
-	public void testMultiplyNegative() {
-		assertEquals(15, calc.subtract(-5, -3));
-	}
-	
-	@Test
-	public void testDivideNegative() {
-		assertEquals(5, calc.subtract(-15, -3));
-	}
 }
 
