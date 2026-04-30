@@ -11,8 +11,8 @@ variables:
 
 workflow:
   rules:
-    - if: $CI_PIPELINE_SOURCE == "merge_request_event"  # na merge requestu
-    - if: $CI_COMMIT_BRANCH == "main"                   # na pushu na main
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_COMMIT_BRANCH == "main"
 
 maven-build:
   stage: build
@@ -21,6 +21,8 @@ maven-build:
     - mvn compile
   tags:
     - my-runner
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
 
 maven-test:
   stage: test
@@ -33,6 +35,8 @@ maven-test:
       junit: my-java-app/target/surefire-reports/TEST-*.xml
   tags:
     - my-runner
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
 
 maven-package:
   stage: test
@@ -44,6 +48,8 @@ maven-package:
       - my-java-app/target/*.jar
   tags:
     - my-runner
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
 
 helm-lint:
   stage: lint
@@ -51,6 +57,8 @@ helm-lint:
     - helm lint $CHART_PATH
   tags:
     - my-runner
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
 
 helm-template:
   stage: template
@@ -58,6 +66,8 @@ helm-template:
     - helm template $RELEASE_NAME $CHART_PATH
   tags:
     - my-runner
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
 
 helm-deploy:
   stage: deploy
@@ -66,4 +76,4 @@ helm-deploy:
   tags:
     - my-runner
   rules:
-    - if: $CI_COMMIT_BRANCH == "main"  # deploy SAMO na main
+    - if: $CI_COMMIT_BRANCH == "main"
