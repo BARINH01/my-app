@@ -42,12 +42,12 @@ public class CalculatorTest {
 	
 	@Test
 	public void testMultiplyNegative() {
-		assertEquals(15, calc.subtract(-5, -3));
+		assertEquals(15, calc.multiply(-5, -3));
 	}
 	
 	@Test
 	public void testDivideNegative() {
-		assertEquals(5, calc.subtract(-15, -3));
+		assertEquals(5, calc.divide(-15, -3));
 	}
 }
 
