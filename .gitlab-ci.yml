@@ -65,4 +65,5 @@ helm-deploy:
     - helm upgrade --install $RELEASE_NAME $CHART_PATH --reset-values
   tags:
     - my-runner
-  rules: if: $CI_COMMIT_BRANCH == "main"  # deploy SAMO na main
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"  # deploy SAMO na main
