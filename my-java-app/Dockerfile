@@ -1,5 +1,5 @@
 # Koristimo openjdk:11 kao base image
-FROM openjdk:11-jre-slim
+FROM eclipse-temurin:11-jre-jammy
 
 # Radni direktorij unutar containera
 WORKDIR /app
