@@ -86,8 +86,8 @@ Key values in `values.yaml`:
 
 | Parameter            | Default    | Description                  |
 |----------------------|------------|------------------------------|
-| `replicaCount`       | `3`        | Number of pod replicas       |
-| `image.repository`   | `nginx`    | Docker image                 |
+| `replicaCount`       | `1`        | Number of pod replicas       |
+| `image.repository`   | `registry.gitlab.com/barinh01-group/my-app/my-java-app`    | Docker image                 |
 | `service.type`       | `ClusterIP`| Kubernetes service type      |
 | `service.port`       | `80`       | Service port                 |
 | `configMap.enabled`  | `true`     | Enable ConfigMap             |
