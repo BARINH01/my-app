@@ -47,11 +47,7 @@ The pipeline runs automatically on Merge Requests and pushes to `main`.
 ### Pipeline Flow
 
 ```
-Merge Request → build → test → lint → template ✅
-                                              ↓
-                                         Code Review
-                                              ↓
-Merge to main →                           deploy 🚀
+Merge Request → build → test → lint → template -> Code Review -> (merge to main) deploy
 ```
 
 ## Getting Started
@@ -108,7 +104,7 @@ workflow:
 ```
 
 - **On Merge Request** — runs all checks (build, test, lint, template)
-- **On merge to main** — runs only deploy
+- **On merge to main** — runs only **deploy**
 
 ## Kubernetes Resources
 
